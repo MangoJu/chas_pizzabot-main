@@ -36,6 +36,7 @@ Use `alert()` to print the message `"Hey! Happy to serve your pizza. On our menu
 
 Use the variables `vegetarian`, `hawaiian` and `pepperoni` to replace `X`, `Y` and `Z` in the message so that it reads `"Hey! Happy to serve your pizza. On our menu we have Vegetarian Pizza, Hawaiian Pizza and Pepperoni Pizza"`
 
+
 #### 2.3 Ask the user which pizza they want, and how many
 
 Use `prompt()` to ask the user which pizza they want. The message in the prompt should read `Enter the name of the pizza you want to order today.`. Their response should be stored in a new variable called `orderName`.

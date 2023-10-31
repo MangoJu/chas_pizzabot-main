@@ -2,10 +2,73 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprint 2: Pizzabot</title>
     <script src="./pizzabot.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     Edit pizzabot.js to complete this assignment.
+
+    <h1>Welcome to our pizza place!</h1>
+    
+    <form class="pizzaForm">
+        <label class="storeTxt" for="pizzaType">Select a pizza:</label>
+        <select id="pizzaType">
+            <option value="Vegetarian Pizza">Vegetarian Pizza</option>
+            <option value="Hawaiian Pizza">Hawaiian Pizza</option>
+            <option value="Pepperoni Pizza">Pepperoni Pizza</option>
+        </select>
+        
+        <br>        
+        <label class="storeTxt" for="quantity">Enter the number of pizzas:</label>
+
+        <div class="number">
+        <input type="number" id="quantity" min="1" max="10">
+        </div>
+        <br>
+
+
+        <input class="buttom" type="button" value="Place Order" onclick="submitOrder()">
+    </form>
+
+    <div id="orderSummary"></div>
+ 
+
+    <!-- Stretch goals. See pizzabot.js for main assignment -->
+    <script>
+        function submitOrder() {
+            const pizzaType = document.getElementById("pizzaType").value;
+            const orderQuantity = parseInt(document.getElementById("quantity").value);
+
+            function checkOrderName(orderName) {
+                return orderName === "Vegetarian Pizza" || orderName === "Hawaiian Pizza" || orderName === "Pepperoni Pizza";
+            }
+
+            if (checkOrderName(pizzaType)) {
+                function totalCost(orderQuantity) {
+                    return orderQuantity * 80;
+                }
+
+                function cookingTime(orderQuantity) {
+                    if (orderQuantity >= 1 && orderQuantity <= 2) {
+                        return "The pizzas will take 10 minutes.";
+                    } else if (orderQuantity >= 3 && orderQuantity <= 5) {
+                        return "The pizzas will take 15 minutes.";
+                    } else {
+                        return "The pizzas will take 20 minutes.";
+                    }
+                }
+
+                const orderTotal = totalCost(orderQuantity);
+                const timeToCook = cookingTime(orderQuantity);
+
+                const orderSummary = `Great, I'll get started on your ${pizzaType} right away, it will cost ${orderTotal} kr. ${timeToCook}`;
+                document.getElementById("orderSummary").innerHTML = orderSummary;
+            } else {
+                document.getElementById("orderSummary").innerHTML = "Sorry, we don't have " + pizzaType + " on the menu.";
+            }
+        }
+    </script>
   </body>
 </html>
