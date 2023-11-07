@@ -1,7 +1,15 @@
+body {
+  background-image: url("/pizzabg.jpg");
+  background-size: cover;
+  color: white;
+  
+}
+
 h1 {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: palevioletred;
+    text-shadow: 2px 2px 2px white;
 }
 
 .storeTxt {
@@ -11,6 +19,8 @@ h1 {
     text-align: center;
     margin-left: 55px;
     margin-top: 22px;
+    text-shadow: 1px 1px rgb(0, 0, 0);
+
 }
 
 .pizzaForm {
@@ -27,7 +37,7 @@ h1 {
     justify-content: center;
     margin-top: 130px;
     height: 160px;
-    width: 120px;
+    width: 100px;
     border-radius: 22px;
     cursor: pointer;
 
@@ -100,6 +110,7 @@ buttom:after {
     line-height: 1.8;   
     letter-spacing: .02em;
     color: #e837c2ae;
-    max-width: 100%;    
- 
+    max-width: 100%;   
+    text-shadow: 1px 1px white;
+
   }
